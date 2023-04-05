@@ -10,10 +10,10 @@ export default function navbar() {
       <ul className ="nav-menu">
 
         <Link to ="/SingUp">
-        <li>SingUp</li>
+        <li>SignUp</li>
         </Link>
         <Link to ="/SingIn">
-        <li>SingIn</li>
+        <li>SignIn</li>
         </Link>
         <Link to ="/Profile">
         <li>Profile</li>
