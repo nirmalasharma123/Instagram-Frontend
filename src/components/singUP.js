@@ -1,35 +1,42 @@
 import React ,{useEffect,useState}from 'react';
+
+import axios from "axios"
 import logo from "../img/singLogo.png";
 import "./singUp.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
+
+import { toast } from 'react-toastify';
+
 
 export default function SingUP() {
+  const Navigate = useNavigate();
   const [name,setName]= useState("");
   const [email,setEmail]=useState("");
   const [userName,setUserName]=useState("");
   const [password,setPassword]=useState("");
-  const [phone,setPhone]=useState("");
+  const [phoneNo,setPhoneNo]=useState("");
 
-  const postData=()=>{
-    fetch("http://localhost:3001/singUp",{
-      method:"post",
-      headers:{
-        "content-Type":"application/json"
-      },
-      body:JSON.stringify({
-        name:name,
-        email:email,
-        userName:userName,
-        email:email,
-        password:password
+  const  notify=(msg)=>toast.error(msg)
+  
 
+   const postData= async function(){
+      const data=  await  axios.post("http://localhost:3001/singUp",{
+        name,
+        userName,
+        email,
+        password,
+        phoneNo
 
-      })
-    }).then(res=>res.json())
-    .catch((err)=>err.message)
+    });
+    console.log(data)
+    if(data.data.status==true){
+      window.alert(data.data.message);
+      Navigate("/singIn")
+    }else{
+      window.alert(data.data.message)
+    }
+
   }
-
-
   return (
     <div className="singUp">
         <div className='form-container'>
@@ -51,10 +58,10 @@ export default function SingUP() {
             <input type = "password" name= "password" id="password"  value={password} placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
           </div>
           <div>
-            <input type = "phone" name= "phone" id="phone"  value={phone} placeholder='phone' onChange={(e)=>{setPhone(e.target.value)}}/>
+            <input type = "phone" name= "phoneNo" id="phone"  value={phoneNo} placeholder='phone' onChange={(e)=>{setPhoneNo(e.target.value)}}/>
           </div>
-          <input type="submit" id="submit-btn" value ="Sign Up"/>
-
+          
+          <button onClick={postData}>Submit</button>
         
         </div>
         <div className='form2'>
