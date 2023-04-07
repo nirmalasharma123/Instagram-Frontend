@@ -19,10 +19,11 @@ export default function SingIn() {
     
 
   }).then((res)=>{
-    console.log(res.data)
-    setToken(res.data.token)
+    console.log(res.data);
     
-    localStorage.setItem("token",JSON.stringify(token))
+  
+    
+    localStorage.setItem("token",JSON.stringify(res.data.token))
     alert("sucessful")
   }).catch((err)=>{
     console.log(err)
