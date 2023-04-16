@@ -4,7 +4,7 @@ img{
 }
 .navbar{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: 1px 5px 5px hsla(310, 69%, 51%, 0.863);
 }
 .nav-menu{
@@ -19,3 +19,21 @@ a{
     color:black;
     font-size : 15px;
 }
+.serchBar {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 0 16px;
+  }
+  
+  .serchBar input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  
+ 

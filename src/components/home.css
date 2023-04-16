@@ -1,0 +1,86 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .Home > div {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Home > div img:first-child {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .Home > div h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .Home > div img:nth-child(3) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .Home > div p:nth-child(3) {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .Home > div p:nth-child(4) {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .liked {
+    color: red;
+  }
+  
+  .commentss {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1.2rem;
+    outline: none;
+  }
+  
+  .post-comment {
+    margin-top: 10px;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .post-comment:hover {
+    background-color: #1a237e;
+  }
+  

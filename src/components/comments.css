@@ -1,0 +1,54 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #0d8bf0;
+  }
+  
+  form {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+  
+  input[type="text"] {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    margin-right: 0.5rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0d8bf0;
+  }
+  

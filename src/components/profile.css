@@ -1,0 +1,119 @@
+/* profile.css */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.profile-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-data {
+  margin-left: 20px;
+}
+
+.profile-info {
+  margin-top: 10px;
+}
+
+.profile-info p {
+  margin-right: 20px;
+}
+
+.profile-info p:last-child {
+  margin-right: 0;
+}
+
+.profile-info p span {
+  margin-right: 5px;
+}
+
+.profile-info p span.material-symbols-outlined {
+  font-size: 20px;
+}
+
+.profile-info p span.material-symbols-outlined:first-child {
+  margin-right: 0;
+}
+
+.profile-info p span.material-symbols-outlined:last-child {
+  margin-left: 5px;
+}
+
+.profile-data p {
+  margin-top: 20px;
+}
+
+.profile-data hr {
+  width: 90%;
+  opacity: 0.8;
+  margin: 24px auto;
+}
+
+.post-container {
+  margin-bottom: 20px;
+}
+
+.post-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-container h4 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.post-container h4 span {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.post-container p {
+  margin-top: 5px;
+}
+
+.post-container button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-container button:hover {
+  background-color: #c62828;
+}
+.changePic {
+  background-color: #42073d;
+  border-radius: 20px;
+}
+
+.changePic div {
+  padding: 15px 80px;
+}
+
+.upload-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: bolder;
+
+  font-size: 15px;
+}
