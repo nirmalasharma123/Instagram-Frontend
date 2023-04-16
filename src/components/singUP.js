@@ -18,7 +18,7 @@ export default function SingUP() {
   const notify = (msg) => toast.error(msg);
 
   const postData = async function () {
-    const data = await axios.post("http://localhost:3001/singUp", {
+    const data = await axios.post("https://instagrambackend.onrender.com/singUp", {
       name,
       userName,
       email,

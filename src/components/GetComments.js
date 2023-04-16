@@ -16,7 +16,7 @@ export default function CommentsPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getComment/${params.postId}`, {
+      .get(`https://instagrambackend.onrender.com/getComment/${params.postId}`, {
         headers: {
           "x-api-key": localStorage.getItem("token"),
         },
@@ -24,6 +24,7 @@ export default function CommentsPage() {
       .then((res) => {
         setPost(res.data.data[0]);
         setComments(res.data.data.slice(1));
+        
       })
       .catch((err) => {
         console.log(err);
@@ -44,7 +45,7 @@ export default function CommentsPage() {
   const handleReplySubmit = (commentId) => {
     axios
       .post(
-        `http://localhost:3001/reply/${commentId}`,
+        `https://instagrambackend.onrender.com/reply/${commentId}`,
         {
           text: replyText,
         },
@@ -75,7 +76,7 @@ export default function CommentsPage() {
 
   const handleDeleteComment = (commentId) => {
     axios
-      .delete(`http://localhost:3001/deletComment/${commentId}`, {
+      .delete(`https://instagrambackend.onrender.com/deletComment/${commentId}`, {
         headers: {
           "x-api-key": localStorage.getItem("token"),
         },

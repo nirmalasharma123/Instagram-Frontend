@@ -16,7 +16,7 @@ export default function SingIn() {
   //const[token,setToken]= useState("")
 
   const postData= async function(){
-    const data=  await  axios.post("http://localhost:3001/login",{
+    const data=  await  axios.post("https://instagrambackend.onrender.com/login",{
       email,
       password,
   }).then((res)=>{

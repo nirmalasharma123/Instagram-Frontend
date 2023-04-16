@@ -6,8 +6,8 @@ import { authContext } from "../App";
 import axios from "axios";
 
 export default function Navbar() {
-  const { isLoggedIn, loggedOut, isVendorLoggedIn } = useContext(authContext);
-  const [searchQuery, setSearchQuery] = useState("");
+  const { isLoggedIn, loggedOut} = useContext(authContext);
+  
 
   function handleLogout(e) {
     localStorage.clear();

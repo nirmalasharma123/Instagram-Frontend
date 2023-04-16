@@ -38,7 +38,7 @@ export default function Profile() {
  const deletePost = postId => {
   
   axios
-    .delete(`http://localhost:3001/deletePost/${postId}`, {
+    .delete(`https://instagrambackend.onrender.com/deletePost/${postId}`, {
 
 
       headers: {
