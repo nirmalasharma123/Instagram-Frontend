@@ -8,7 +8,7 @@ export default function SetProfilePic({ profileId }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/profile/${profileId}`)
+      .get(`http://localhost:3001/profile/${profileId}`)
       .then((res) => {
         setProfilePicUrl(res.data.data.profilePic);
       })

@@ -72,7 +72,7 @@ export default function UserProfile() {
       )
       .then((res) => {
         console.log(res.data);
-        alert(res.message);
+        alert(res.data.message);
         setCommentText("");
       })
       .catch((err) => {

@@ -12,6 +12,7 @@ export default function Profile() {
 
  useEffect(() => {
    axios.get('http://localhost:3001/myProfile', {
+    
      headers: {
        'x-api-key': localStorage.getItem('token')
      }
@@ -35,9 +36,11 @@ export default function Profile() {
  }
 
  const deletePost = postId => {
-  console.log(postId)
+  
   axios
     .delete(`http://localhost:3001/deletePost/${postId}`, {
+
+
       headers: {
         'x-api-key': localStorage.getItem('token')
       }

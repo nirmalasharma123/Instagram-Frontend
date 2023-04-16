@@ -27,6 +27,7 @@ export default function CommentsPage() {
       })
       .catch((err) => {
         console.log(err);
+        alert(err.data.message)
       });
   }, [params.postId]);
 
@@ -66,6 +67,7 @@ export default function CommentsPage() {
       })
       .catch((err) => {
         console.log(err);
+        
       });
   };
 
@@ -109,7 +111,10 @@ export default function CommentsPage() {
           <div key={comment._id}>
             <p>
               {comment.userId && comment.userId.userName && (
+               
+
                 <strong>{comment.userId.userName}: </strong>
+            
               )}
               {comment.text}
             </p>
@@ -131,7 +136,9 @@ export default function CommentsPage() {
                       </p>
                     </div>
                   ))}
+              
                 <p>{`Replies: ${comment.replyCount}`}</p>
+                <p>{comment.reply.text}</p>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();

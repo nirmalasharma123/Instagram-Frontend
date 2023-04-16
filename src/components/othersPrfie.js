@@ -71,8 +71,8 @@ export default function UserProfile() {
         }
       )
       .then((res) => {
-        console.log(res.data);
-        alert(res.message);
+        console.log(res.data.data);
+        alert(res.data.message);
         setCommentText("");
       })
       .catch((err) => {
