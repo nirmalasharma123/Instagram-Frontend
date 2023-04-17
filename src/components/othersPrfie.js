@@ -118,7 +118,7 @@ export default function UserProfile() {
         
         <p>{userProfile.postCount} posts</p>
         <button onClick={toggleFollow} className="followButton">
-          {following ? "Unfollow" : "Follow"}</button>
+          {following ? "Following" : "Follow"}</button>
       </div>
       <div><p>{userProfile.bio}</p></div>
       <hr></hr>
