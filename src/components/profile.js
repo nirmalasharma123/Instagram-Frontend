@@ -46,8 +46,10 @@ export default function Profile() {
       }
     })
     .then(res => {
+      
       console.log(res.data.data)
       setData(res.data.data)
+      window.location.reload()
     })
     .catch(err => {
       console.log(err);

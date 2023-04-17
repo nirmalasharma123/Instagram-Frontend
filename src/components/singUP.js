@@ -5,7 +5,6 @@ import logo from "../img/singLogo.png";
 import "./singUp.css";
 import { Link, useNavigate } from "react-router-dom";
 
-import { toast } from "react-toastify";
 
 export default function SingUP() {
   const Navigate = useNavigate();
@@ -15,7 +14,7 @@ export default function SingUP() {
   const [password, setPassword] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
 
-  const notify = (msg) => toast.error(msg);
+
 
   const postData = async function () {
     const data = await axios.post("https://instagrambackend.onrender.com/singUp", {
@@ -27,11 +26,11 @@ export default function SingUP() {
     })
     .then((res)=>{
       console.log(res.data.data);
-      alert("sucessful")
+      alert("successful")
       Navigate("/singIn");
     }).catch((err)=>{
       console.log(err.response)
-      alert(err.response.data)
+      alert(err.response.message)
     })
   
   };
