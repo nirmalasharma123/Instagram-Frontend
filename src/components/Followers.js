@@ -12,7 +12,7 @@ export default function Followers() {
 
   useEffect(() => {
     axios
-      .get(`https://instagrambackend.onrender.com/followers/${params.id}`, {
+      .get(`http://localhost:3001/followers/${params.id}`, {
         headers: {
           'x-api-key': localStorage.getItem('token')
         }

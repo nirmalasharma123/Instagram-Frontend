@@ -38,7 +38,7 @@ export default function Profile() {
  const deletePost = postId => {
   
   axios
-    .delete(`https://instagrambackend.onrender.com/deletePost/${postId}`, {
+    .delete(`http://localhost:3001/deletePost/${postId}`, {
 
 
       headers: {
@@ -83,7 +83,7 @@ export default function Profile() {
           }
         
            </div>
-           <p>{data.bio}</p>
+           <p>{data.bio}</p> <span className="material-symbols-outlined" onC>border_color</span>
            
          </div>
        </div>

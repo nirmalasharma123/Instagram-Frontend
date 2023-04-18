@@ -17,7 +17,7 @@ export default function Post() {
 
     try {
       const response = await axios.post(
-        "https://instagrambackend.onrender.com/creatPost",
+        "http://localhost:3001/creatPost",
         formData,
         {
           headers: {

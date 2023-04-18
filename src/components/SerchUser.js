@@ -9,7 +9,7 @@ const SearchUser = () => {
   const getUser = async (e) => {
     e.preventDefault();
     await axios
-      .get(`https://instagrambackend.onrender.com/userProfile/${query}`, {
+      .get(`http://localhost:3001/userProfile/${query}`, {
         headers: {
           "x-api-key": localStorage.getItem("token"),
         },

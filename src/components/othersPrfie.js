@@ -14,7 +14,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     axios
-      .get(`https://instagrambackend.onrender.com/findUserBypostId/${params.id}`, {
+      .get(`http://localhost:3001/findUserBypostId/${params.id}`, {
         headers: {
           "x-api-key": localStorage.getItem("token"),
         },
@@ -27,13 +27,13 @@ export default function UserProfile() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [userProfile]);
 
   const likePost = (post) => {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `https://instagrambackend.onrender.com/like/${post._id}`,
+        `http://localhost:3001/like/${post._id}`,
         {},
         {
           headers: {
@@ -60,7 +60,7 @@ export default function UserProfile() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `https://instagrambackend.onrender.com/creatComment/${post._id}`,
+        `http://localhost:3001/creatComment/${post._id}`,
         {
           text: commentText,
         },
@@ -87,7 +87,7 @@ export default function UserProfile() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `https://instagrambackend.onrender.com/follow/${userProfile._id}`,
+        `http://localhost:3001/follow/${userProfile._id}`,
         {},
         {
           headers: {

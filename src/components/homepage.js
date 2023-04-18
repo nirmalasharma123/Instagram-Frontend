@@ -15,13 +15,14 @@ export default function Homepage() {
 
   function handleChange(e) {
     setComment(e.target.value);
+    
   }
 
   const submitComment = (post) => {
     console.log(comment);
     axios
       .post(
-        `https://instagrambackend.onrender.com/creatComment/${post._id}`,
+        `http://localhost:3001/creatComment/${post._id}`,
         { text: comment },
         {
           headers: {
@@ -32,6 +33,7 @@ export default function Homepage() {
       .then((res) => {
         console.log(res.data);
         alert("comment added");
+        
       })
       .catch((err) => {
         console.log(err);
@@ -42,7 +44,7 @@ export default function Homepage() {
     localStorage.getItem(token)
     axios
       .post(
-        `https://instagrambackend.onrender.com/like/${post._id}`,{},
+        `http://localhost:3001/like/${post._id}`,{},
         
         {
           headers: {
@@ -68,7 +70,7 @@ export default function Homepage() {
       return;
     }
     axios
-      .get("https://instagrambackend.onrender.com/getPosts", {
+      .get("http://localhost:3001/getPosts", {
         headers: {
           "x-api-key": token,
         },
@@ -92,7 +94,7 @@ export default function Homepage() {
     <div className="Home">
       {posts.map((post) => (
         <div key={post.id}>
-          <img src={post.postedBy.profilePic} alt="" />
+          <img  className="profilePic" src={post.profileId.profilePic} alt="" />
           
           <Link to={`/findUserBypostId/${post._id}`}><h5>{post.postedBy.userName}</h5></Link>
           <img src={post.photo} alt="" />
