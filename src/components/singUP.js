@@ -17,6 +17,7 @@ export default function SingUP() {
 
 
   const postData = async function () {
+    
     const data = await axios.post("https://instagrambackend.onrender.com/singUp", {
       name,
       userName,

@@ -4,11 +4,19 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import SetProfilePic from './setProfilePic';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 
 export default function Profile() {
  const [data, setData] = useState('');
  const [chngePic,setProfilePic]=useState(false)
+ const [editBioOpen, setEditBioOpen] = useState(false);
+ const [bio, setBio] = useState('');
+
+ 
+
 
  useEffect(() => {
    axios.get('https://instagrambackend.onrender.com/myProfile', {
@@ -24,6 +32,8 @@ export default function Profile() {
    .catch(err => {
      console.log(err);
    });
+
+
  }, []);
 
 
@@ -34,6 +44,44 @@ export default function Profile() {
     setProfilePic(true)
   }
  }
+
+ const handleEditBioOpen = () => {
+  setEditBioOpen(true);
+};
+
+const handleEditBioClose = () => {
+  setEditBioOpen(false);
+};
+const handleEditBioSubmit = (event) => {
+  event.preventDefault();
+
+  handleEditBioClose();
+};
+
+const handleBioChange = (event) => {
+  const newBio = event.target.value;
+  setBio(newBio); 
+  axios
+    .post(
+      `https://instagrambackend.onrender.com/updateProfile/${data._id}`,
+      {
+        bio: newBio,
+      },
+      {
+        headers: {
+          'x-api-key': localStorage.getItem('token'),
+        },
+      }
+    )
+    .then((res) => {
+      console.log(res.data.data);
+        
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 
  const deletePost = postId => {
   
@@ -83,9 +131,31 @@ export default function Profile() {
           }
         
            </div>
-           <p>{data.bio}</p> <span className="material-symbols-outlined" onC>border_color</span>
+           <p>{data.bio}</p> <span className="material-symbols-outlined" onClick={handleEditBioOpen}>border_color</span>
            
          </div>
+         <Dialog open={editBioOpen} onClose={handleEditBioClose}>
+        <DialogTitle>Edit Bio</DialogTitle>
+        <DialogContent>
+          <form onSubmit={handleEditBioSubmit}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="bio"
+              label="Bio"
+              type="text"
+              fullWidth
+              value={bio}
+              onChange={handleBioChange}
+            />
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleEditBioClose}>Cancel</Button>
+          <Button onClick={handleEditBioSubmit}>Save</Button>
+        </DialogActions>
+      </Dialog>
+
        </div>
        <hr
          style={{
@@ -112,6 +182,7 @@ export default function Profile() {
           </div> )}
           
        </div>:<h1>Loading</h1>}
+       
        </>
      
  )

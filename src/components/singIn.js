@@ -11,9 +11,11 @@ export default function SingIn() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const[token,setToken]= useState("")
+
 
   const postData = async function () {
+
+
     const data = await axios
       .post("https://instagrambackend.onrender.com/login", {
         email,
@@ -23,7 +25,6 @@ export default function SingIn() {
         console.log(res.data);
 
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", res.data.token.userId);
         loggedIn(res.data.token);
         alert("successful");
         Navigate("/");
