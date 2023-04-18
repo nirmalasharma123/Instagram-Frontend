@@ -22,7 +22,7 @@ export default function Homepage() {
     console.log(comment);
     axios
       .post(
-        `http://localhost:3001/creatComment/${post._id}`,
+        `https://instagrambackend.onrender.com/creatComment/${post._id}`,
         { text: comment },
         {
           headers: {
@@ -44,7 +44,7 @@ export default function Homepage() {
     localStorage.getItem(token)
     axios
       .post(
-        `http://localhost:3001/like/${post._id}`,{},
+        `https://instagrambackend.onrender.com/like/${post._id}`,{},
         
         {
           headers: {
@@ -70,7 +70,7 @@ export default function Homepage() {
       return;
     }
     axios
-      .get("http://localhost:3001/getPosts", {
+      .get("https://instagrambackend.onrender.com/getPosts", {
         headers: {
           "x-api-key": token,
         },

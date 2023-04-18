@@ -17,7 +17,7 @@ export default function SingUP() {
 
 
   const postData = async function () {
-    const data = await axios.post("http://localhost:3001/singUp", {
+    const data = await axios.post("https://instagrambackend.onrender.com/singUp", {
       name,
       userName,
       email,
@@ -30,7 +30,7 @@ export default function SingUP() {
       Navigate("/singIn");
     }).catch((err)=>{
       console.log(err.response)
-      alert(err.response.data.message)
+      alert(err.response.data)
     })
   
   };

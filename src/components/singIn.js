@@ -15,7 +15,7 @@ export default function SingIn() {
 
   const postData = async function () {
     const data = await axios
-      .post("http://localhost:3001/login", {
+      .post("https://instagrambackend.onrender.com/login", {
         email,
         password,
       })

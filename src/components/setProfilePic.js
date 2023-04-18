@@ -8,7 +8,7 @@ export default function SetProfilePic({ profileId }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/profile/${profileId}`)
+      .get(`https://instagrambackend.onrender.com/profile/${profileId}`)
       .then((res) => {
         setProfilePicUrl(res.data.data.profilePic);
         
@@ -31,7 +31,7 @@ export default function SetProfilePic({ profileId }) {
       const formData = new FormData();
       formData.append("file", selectedFile);
       axios
-        .post(`http://localhost:3001/updateProfile/${profileId}`, formData, {
+        .post(`https://instagrambackend.onrender.com/updateProfile/${profileId}`, formData, {
           headers: {
             "x-api-key": localStorage.getItem("token"),
           },

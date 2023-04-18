@@ -14,7 +14,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/findUserBypostId/${params.id}`, {
+      .get(`https://instagrambackend.onrender.com/findUserBypostId/${params.id}`, {
         headers: {
           "x-api-key": localStorage.getItem("token"),
         },
@@ -33,7 +33,7 @@ export default function UserProfile() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `http://localhost:3001/like/${post._id}`,
+        `https://instagrambackend.onrender.com/like/${post._id}`,
         {},
         {
           headers: {
@@ -60,7 +60,7 @@ export default function UserProfile() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `http://localhost:3001/creatComment/${post._id}`,
+        `https://instagrambackend.onrender.com/creatComment/${post._id}`,
         {
           text: commentText,
         },
@@ -87,7 +87,7 @@ export default function UserProfile() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `http://localhost:3001/follow/${userProfile._id}`,
+        `https://instagrambackend.onrender.com/follow/${userProfile._id}`,
         {},
         {
           headers: {
@@ -118,7 +118,7 @@ export default function UserProfile() {
         
         <p>{userProfile.postCount} posts</p>
         <button onClick={toggleFollow} className="followButton">
-          {following ? "Following" : "Follow"}</button>
+          {following ? "Followed" : "Follow"}</button>
       </div>
       <div><p>{userProfile.bio}</p></div>
       <hr></hr>

@@ -11,7 +11,7 @@ export default function Profile() {
  const [chngePic,setProfilePic]=useState(false)
 
  useEffect(() => {
-   axios.get('http://localhost:3001/myProfile', {
+   axios.get('https://instagrambackend.onrender.com/myProfile', {
     
      headers: {
        'x-api-key': localStorage.getItem('token')
@@ -38,7 +38,7 @@ export default function Profile() {
  const deletePost = postId => {
   
   axios
-    .delete(`http://localhost:3001/deletePost/${postId}`, {
+    .delete(`https://instagrambackend.onrender.com/deletePost/${postId}`, {
 
 
       headers: {
